@@ -3,23 +3,69 @@ $teambuilder-color: hsl(0, 78%, 62%);
 $karma-color: hsl(34, 97%, 64%);
 $calculator-color: hsl(212, 86%, 64%);
 
-*::before *::after {
+/* Box sizing rules */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-//Remove all margins
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
 h1,
 h2,
 h3,
 h4,
 p,
-img,
-svg,
-ul,
-li {
-    margin: 0;
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
 }
 
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+//CSS Reset=================================
 
 @mixin Flex($direction) {
     display: flex;
@@ -36,8 +82,6 @@ body {
 }
 
 .container {
-    @include Flex(column);
-
     max-width: 21rem;
 }
 
@@ -61,7 +105,7 @@ body {
     //Description styles
     p {
         text-wrap: balance;
-        opacity: 0.4;
+        color: hsl(229, 6%, 66%);
         font-size: 0.9375rem;
         margin-bottom: 42px;
     }
@@ -70,24 +114,30 @@ body {
 
 //Card styles section
 .card-list {
-    @include Flex(column);
+  // @include Flex(column);
 
 }
 
 //Shared style
 .card-text {
     font-size: 0.9375rem;
-    opacity: 0.4;
+    color: hsl(229, 6%, 66%);
     padding-bottom: 24px;
+}
+
+.main-cards {
+    img {
+        margin-left: auto;
+    }
+    box-shadow: 3px 3px 6px 2px hsla(0, 0%, 0%, 0.2);
+    border-radius: 4px;
 }
 
 .card1 {
     background-color: white;
     padding: 24px;
     margin: 10px;
-    border-top: solid 3px $supervisor-color;
-    box-shadow: 3px 3px 6px 2px hsla(0, 0%, 0%, 0.2);
-
+    border-top: solid 4px $supervisor-color;
 }
 
 .card2 {
@@ -95,24 +145,58 @@ body {
     padding: 24px;
     margin: 10px;
     box-shadow: 3px 3px 6px 2px hsla(0, 0%, 0%, 0.2);
-    border-top: solid 3px $teambuilder-color;
+    border-top: solid 4px $teambuilder-color;
 
-    
 }
 
 .card3 {
     background-color: white;
-    padding: 16px;
+    padding: 24px;
     margin: 10px;
-    box-shadow: 3px 3px 6px 2px hsla(0, 0%, 0%, 0.2);
-    border-top: solid 3px $karma-color;
-
+    border-top: solid 4px $karma-color;
 }
 
 .card4 {
     background-color: white;
-    padding: 16px;
+    padding: 24px;
     margin: 10px;
-    box-shadow: 3px 3px 6px 2px hsla(0, 0%, 0%, 0.2);
-    border-top: solid 3px $calculator-color;
+    border-top: solid 4px $calculator-color;
+}
+
+//media query for Desktop view
+@mixin Grid($columns, $rows) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-template-rows: repeat($rows, 1fr);
+    align-items: center;
+    justify-content: center;
+    
+}
+
+@media (min-width:43.75rem) {
+    .container{
+        max-width: 64rem;
+    }
+
+    .card-list {
+        @include Grid(3, 2);
+    }
+    
+    .card1{
+        grid-area: 1/1/1/1;
+        
+    }
+
+    .card2{
+        grid-area: 1/2/1/2;
+    }
+
+    .card3{
+        grid-area: 2/2/2/2;
+    }
+
+    .card4{
+        grid-area: 1/3/1/3;
+    }
+
 }
