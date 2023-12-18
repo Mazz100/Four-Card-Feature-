@@ -1,0 +1,118 @@
+$supervisor-color: hsl(180, 62%, 55%);
+$teambuilder-color: hsl(0, 78%, 62%);
+$karma-color: hsl(34, 97%, 64%);
+$calculator-color: hsl(212, 86%, 64%);
+
+*::before *::after {
+    box-sizing: border-box;
+}
+
+//Remove all margins
+h1,
+h2,
+h3,
+h4,
+p,
+img,
+svg,
+ul,
+li {
+    margin: 0;
+}
+
+
+@mixin Flex($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    @include Flex(column);
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.container {
+    @include Flex(column);
+
+    max-width: 21rem;
+}
+
+.top-content {
+    @include Flex(column);
+    text-align: center;
+
+    //First header styles
+    h1 {
+        font-weight: 200;
+        font-size: 1.5rem;
+        margin-top: 32px
+    }
+
+    //Second header styles
+    h2 {
+        font-weight: 600;
+        margin-bottom: 16px;
+    }
+
+    //Description styles
+    p {
+        text-wrap: balance;
+        opacity: 0.4;
+        font-size: 0.9375rem;
+        margin-bottom: 42px;
+    }
+
+}
+
+//Card styles section
+.card-list {
+    @include Flex(column);
+
+}
+
+//Shared style
+.card-text {
+    font-size: 0.9375rem;
+    opacity: 0.4;
+    padding-bottom: 24px;
+}
+
+.card1 {
+    background-color: white;
+    padding: 24px;
+    margin: 10px;
+    border-top: solid 3px $supervisor-color;
+    box-shadow: 3px 3px 6px 2px hsla(0, 0%, 0%, 0.2);
+
+}
+
+.card2 {
+    background-color: white;
+    padding: 24px;
+    margin: 10px;
+    box-shadow: 3px 3px 6px 2px hsla(0, 0%, 0%, 0.2);
+    border-top: solid 3px $teambuilder-color;
+
+    
+}
+
+.card3 {
+    background-color: white;
+    padding: 16px;
+    margin: 10px;
+    box-shadow: 3px 3px 6px 2px hsla(0, 0%, 0%, 0.2);
+    border-top: solid 3px $karma-color;
+
+}
+
+.card4 {
+    background-color: white;
+    padding: 16px;
+    margin: 10px;
+    box-shadow: 3px 3px 6px 2px hsla(0, 0%, 0%, 0.2);
+    border-top: solid 3px $calculator-color;
+}
