@@ -89,7 +89,7 @@ body {
   font-weight: 600;
   margin-bottom: 16px;
 }
-.top-content p {
+.top-content .description {
   text-wrap: balance;
   color: hsl(229, 6%, 66%);
   font-size: 0.9375rem;
@@ -114,6 +114,7 @@ body {
   background-color: white;
   padding: 24px;
   margin: 10px;
+  margin-bottom: 20px;
   border-top: solid 4px hsl(180, 62%, 55%);
 }
 
@@ -121,6 +122,7 @@ body {
   background-color: white;
   padding: 24px;
   margin: 10px;
+  margin-bottom: 20px;
   box-shadow: 3px 3px 6px 2px hsla(0, 0%, 0%, 0.2);
   border-top: solid 4px hsl(0, 78%, 62%);
 }
@@ -129,6 +131,7 @@ body {
   background-color: white;
   padding: 24px;
   margin: 10px;
+  margin-bottom: 20px;
   border-top: solid 4px hsl(34, 97%, 64%);
 }
 
@@ -136,6 +139,7 @@ body {
   background-color: white;
   padding: 24px;
   margin: 10px;
+  margin-bottom: 20px;
   border-top: solid 4px hsl(212, 86%, 64%);
 }
 
@@ -143,23 +147,26 @@ body {
   .container {
     max-width: 64rem;
   }
+  .top-content {
+    padding: 24px;
+  }
   .card-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     align-items: center;
     justify-content: center;
   }
   .card1 {
-    grid-area: 1/1/1/1;
+    grid-area: 2/1/4/2;
   }
   .card2 {
-    grid-area: 1/2/1/2;
+    grid-area: 1/2/3/3;
   }
   .card3 {
-    grid-area: 2/2/2/2;
+    grid-area: 3/2/5/3;
   }
   .card4 {
-    grid-area: 1/3/1/3;
+    grid-area: 2/3/4/3;
   }
 }/*# sourceMappingURL=style.css.map */

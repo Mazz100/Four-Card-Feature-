@@ -103,7 +103,7 @@ body {
     }
 
     //Description styles
-    p {
+    .description {
         text-wrap: balance;
         color: hsl(229, 6%, 66%);
         font-size: 0.9375rem;
@@ -113,10 +113,6 @@ body {
 }
 
 //Card styles section
-.card-list {
-  // @include Flex(column);
-
-}
 
 //Shared style
 .card-text {
@@ -137,6 +133,7 @@ body {
     background-color: white;
     padding: 24px;
     margin: 10px;
+    margin-bottom: 20px;
     border-top: solid 4px $supervisor-color;
 }
 
@@ -144,6 +141,7 @@ body {
     background-color: white;
     padding: 24px;
     margin: 10px;
+    margin-bottom: 20px;
     box-shadow: 3px 3px 6px 2px hsla(0, 0%, 0%, 0.2);
     border-top: solid 4px $teambuilder-color;
 
@@ -153,6 +151,7 @@ body {
     background-color: white;
     padding: 24px;
     margin: 10px;
+    margin-bottom: 20px;
     border-top: solid 4px $karma-color;
 }
 
@@ -160,6 +159,7 @@ body {
     background-color: white;
     padding: 24px;
     margin: 10px;
+    margin-bottom: 20px;
     border-top: solid 4px $calculator-color;
 }
 
@@ -178,25 +178,29 @@ body {
         max-width: 64rem;
     }
 
+    .top-content{
+        padding: 24px;
+    }
+
     .card-list {
-        @include Grid(3, 2);
+        @include Grid(3, 4);
     }
     
     .card1{
-        grid-area: 1/1/1/1;
+        grid-area: 2/1/4/2;
         
     }
 
     .card2{
-        grid-area: 1/2/1/2;
+        grid-area: 1/2/3/3;
     }
 
     .card3{
-        grid-area: 2/2/2/2;
+        grid-area: 3/2/5/3;
     }
 
     .card4{
-        grid-area: 1/3/1/3;
+        grid-area: 2/3/4/3;
     }
 
 }
